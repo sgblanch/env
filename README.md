@@ -57,8 +57,8 @@ unset OLD_UMASK
 **WARNING** Don't use a `.bash_profile`.  It will prevent `.profile` from being read.  Merge any changes you care about in `.bash_profile` into either `.profile` or a custom `.bash.d/*.sh`.
 
 ```bash
-install -m 0700 ~/.ssh/mux
-install -m 0750 ~/.vim/spell
+install -m 0700 -d ~/.ssh/mux
+install -m 0750 -d ~/.vim/spell
 install -m 0600 ~/opt/env/gitconfig{.tmpl,}
 install -m 0600 ~/opt/env/bash.d/10defaults.sh{.tmpl,}
 
