@@ -1,0 +1,26 @@
+## Constantly display the cursor position in the statusbar.  Note that
+## this overrides "quickblank".
+set const
+
+## Disable ~/.nano_history for saving and reading search/replace strings.
+unset historylog
+
+## Enable mouse support, if available for your system.  When enabled,
+## mouse clicks can be used to place the cursor, set the mark (with a
+## double click), and execute shortcuts.  The mouse will work in the X
+## Window System, and on the console when gpm is running.
+##
+set mouse
+
+## Don't convert files from DOS/Mac format.
+set noconvert
+
+## Don't wrap text at all.
+set nowrap
+
+## Enable soft line wrapping (AKA full line display).  Not available on
+## the version shipped with macOS and probably never will be.
+#set softwrap
+
+## Do not allow nano to be suspended.
+unset suspend

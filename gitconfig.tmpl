@@ -1,0 +1,16 @@
+[color]
+	ui = auto
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+[core]
+	autocrlf = input
+	editor = nano
+[push]
+	default = simple
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

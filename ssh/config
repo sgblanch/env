@@ -1,0 +1,25 @@
+# Enable TCP and SSH methods to monitor connections.  This both prevents
+# network timeouts and allow detections of failed connections
+TCPKeepAlive yes
+ServerAliveInterval 60
+ServerAliveCountMax 3
+
+Host hpc.uncc.edu
+	# Enable session multiplexing.  Once connected, additional
+	# connections over SSH (including rsync!) won't require
+	# authentication.  Major bonus when two-factor auth is enabled
+	ControlMaster auto
+	ControlPath ~/.ssh/mux/%C
+	ControlPersist 4h
+	# Forward SSH agent.  Allows you to use identities stored on
+	# this computer to access remote computers from the cluster.
+	# Hello GitHub!
+	ForwardAgent yes
+
+# Example showing how to enable X forwarding as well as how to connect
+# to an IP address by name
+#Host halcyon
+#	Compression yes
+#	ForwardX11 yes
+#	ForwardX11Trusted yes
+#	HostName 192.168.1.1

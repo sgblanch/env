@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# set prompt to 'debian' style.  Available styles listed in 05prompt.sh
+prompt debian
+
+
+# Default text editor.
+EDITOR="nano"
+VISUAL="nano"
+
+# Default pager to read text files
+PAGER="less"
+
+export EDITOR VISUAL PAGER
+
+# GitHub API token for homebrew.  Lifts API rate limits that can plague
+# frequent 'brew' usage.
+#
+# WARNING: when creating token, unselect *all* scopes
+# See:
+#      man brew
+#      https://github.com/settings/tokens
+#      https://developer.github.com/v3/#rate-limiting
+#export HOMEBREW_GITHUB_API_TOKEN=""
+
+# Internal variables used by bash.d/50aliases.sh
+enable_color="true"  # Use color on the command line (e.g. ls, grep, etc)
+confirm="true"       # Confirm when deleting files
+

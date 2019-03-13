@@ -1,0 +1,5 @@
+# This is the configuration file for GNU Readline, used by bash and many
+# other programs to provide command-line editing support.
+
+#set editing-mode vi
+#set keymap vi-command

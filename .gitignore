@@ -1,0 +1,10 @@
+.DS_Store
+._*
+gitconfig
+bash.d/10defaults.sh
+ssh/authorized_keys
+ssh/id_dsa*
+ssh/id_ecdsa*
+ssh/id_ed25519*
+ssh/id_rsa*
+vim/.netrwhist

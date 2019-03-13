@@ -1,0 +1,6 @@
+# This is the configuration file for BSD editline (similar to GNU
+# Readline).  It is used to provide command-line editing support for
+# builtin commands in BSD and macOS
+
+# Use vi-like keybindings
+#bind -v 
