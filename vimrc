@@ -35,8 +35,13 @@ set showmatch
 "set tabstop=2     " tab == 2 spaces
 "set shiftwidth=2  " indent == 2 spaces
 
-"" Mouse support.  Will eat macOS's copy & paste if enabled
-"set mouse=a
+"" Enable mouse support if compiled with +clipboard.  Would eat copy &
+"" paste on macOS otherwise
+if has("clipboard")
+	set mouse=a
+	"" use system clipboard (e.g macOS pasteboard or X11 cliboard)
+	set clipboard=unnamed
+endif
 
 "" Disable .viminfo file
 set viminfo=
