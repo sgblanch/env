@@ -71,9 +71,9 @@ git config --global core.excludesfile ~/.gitignore_global
 for dotfile in bash.d bash_logout bashrc editrc \
             gitattributes gitconfig gitignore_global \
             hgignore_global inputrc nanorc profile \
-            ssh/config mux-osx.conf tmux-theme.conf \
-            tmux.conf vimrc; do
-    ln -s "opt/env/$dotfile" "$HOME/.$dotfile"
+            ssh/config tmux-osx.conf tmux-theme.conf \
+            tmux.conf vim/bundle vimrc; do
+    ln -s ~/opt/env/"$dotfile" "$HOME/.$dotfile"
 done
 ```
 
