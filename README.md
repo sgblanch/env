@@ -41,13 +41,7 @@ git clone https://github.com/Homebrew/brew ~/opt/brew
 ### Downloading dotfiles
 
 ```bash
-OLD_UMASK="$(umask)"
-umask 0077
-
-git clone https://github.com/sgblanch/env.git ~/opt/env
-
-umask $OLD_UMASK
-unset OLD_UMASK
+git clone --recurse-submodules https://github.com/sgblanch/env.git ~/opt/env
 ```
 
 ### Linking dotfiles
@@ -64,10 +58,6 @@ install -m 0600 ~/opt/env/bash.d/10defaults.sh{.tmpl,}
 
 nano ~/opt/env/bash.d/10defaults.sh
 
-git config --global user.name "John Doe"
-git config --global user.email "jdoe@uncc.edu"
-git config --global core.excludesfile ~/.gitignore_global
-
 for dotfile in bash.d bash_logout bashrc editrc \
             gitattributes gitconfig gitignore_global \
             hgignore_global inputrc nanorc profile \
@@ -75,12 +65,12 @@ for dotfile in bash.d bash_logout bashrc editrc \
             tmux.conf vim/bundle vimrc; do
     ln -s ~/opt/env/"$dotfile" "$HOME/.$dotfile"
 done
+
+git config --global user.name "John Doe"
+git config --global user.email "jdoe@uncc.edu"
+git config --global core.excludesfile ~/.gitignore_global
+git config --global core.editor "nano"
 ```
-
-#### Changing default `EDITOR` from `nano`
-
-* Change `EDITOR` in `bash.d/10defaults.sh`
-* `git config --global core.editor "vim"`
 
 ## Required & Recommended Packages
 
