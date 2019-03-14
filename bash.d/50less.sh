@@ -2,7 +2,7 @@
 
 # Use lesspipe, if available, to support more formats and syntax
 # highlighting
-for lesspipe in /usr/bin/lesspipe "$(brew --prefix)/bin/lesspipe.sh"; do
+for lesspipe in lesspipe lesspipe.sh; do
 	if command -v "${lesspipe}" > /dev/null; then
 		eval "$(SHELL=/bin/sh "${lesspipe}")"
 		break
