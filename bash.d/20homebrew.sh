@@ -1,16 +1,14 @@
 #!/bin/bash
 
-# Add possible homebrew locations to PATH.  If all exist, order of
-# precedence is:
-#     $HOME/opt/brew/bin/brew  (Recommended by Steven)
-#     /opt/brew/bin/brew       (Alternate location from Steven)
-#     /usr/local/bin/brew      (Default instalation directory)
-[[ -x "/opt/brew/bin/brew" ]] && PATH="/opt/brew/bin:${PATH}"
-[[ -x "${HOME}/opt/brew/bin/brew" ]] && PATH="i${HOME}/opt/brew/bin:${PATH}"
-
+# Search for homebrew
 for dir in ~/opt/brew /opt/brew ~/.linuxbrew /home/linuxbrew/.linuxbrew /usr/local; do
-	if [[ -d "${dir}" ]] && [[ -x "${dir}/bin/brew" ]]; then
-		eval "$(${dir}/bin/brew shellenv)"
+	if [[ -x "${dir}/bin/brew" ]]; then
+		HOMEBREW_PREFIX="$("${dir}/bin/brew" --prefix)"
+		HOMEBREW_CELLAR="$("${dir}/bin/brew" --cellar)"
+		HOMEBREW_REPOSITORY="$("${dir}/bin/brew" --repository)"
+		prepend_dir PATH "${dir}/sbin"
+		prepend_dir PATH "${dir}/bin"
+		export HOMEBREW_PREFIX HOMEBREW_CELLAR HOMEBREW_REPOSITORY PATH
 		break
 	fi
 done
