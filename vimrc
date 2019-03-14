@@ -39,7 +39,7 @@ set showmatch
 "" paste on macOS otherwise
 if has("clipboard")
 	set mouse=a
-	"" use system clipboard (e.g macOS pasteboard or X11 cliboard)
+	"" use system clipboard (e.g macOS pasteboard or X11 clipboard)
 	set clipboard=unnamed
 endif
 
