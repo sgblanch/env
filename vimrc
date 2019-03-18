@@ -48,7 +48,7 @@ set viminfo=
 
 "" Line numbering (except text files)
 set number
-autocmd FileType text unset number
+autocmd FileType text set nonumber
 
 "" Highlight column 73
 set colorcolumn=73
