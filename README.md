@@ -56,7 +56,7 @@ install -m 0600 ~/opt/env/bash.d/10defaults.sh{.tmpl,}
 
 nano ~/opt/env/bash.d/10defaults.sh
 
-for dotfile in bash.d bash_logout bashrc editrc \
+for dotfile in bash.d bash_logout bashrc condarc editrc \
             gitattributes gitconfig gitignore_global \
             hgignore_global inputrc nanorc profile \
             ssh/config tmux-osx.conf tmux-theme.conf \
