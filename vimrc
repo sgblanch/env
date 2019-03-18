@@ -35,9 +35,9 @@ set showmatch
 "set tabstop=2     " tab == 2 spaces
 "set shiftwidth=2  " indent == 2 spaces
 
-"" Enable mouse support if compiled with +clipboard.  Would eat copy &
-"" paste on macOS otherwise
-if has("clipboard")
+"" Enable mouse support if compiled with +clipboard and we are not
+"" connected via SSH.
+if has("clipboard") && ($SSH_CONNECTION == "")
 	set mouse=a
 	"" use system clipboard (e.g macOS pasteboard or X11 clipboard)
 	set clipboard=unnamed

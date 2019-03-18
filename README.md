@@ -59,8 +59,8 @@ nano ~/opt/env/bash.d/10defaults.sh
 for dotfile in bash.d bash_logout bashrc condarc editrc \
             gitattributes gitconfig gitignore_global \
             hgignore_global inputrc nanorc profile \
-            ssh/config tmux-osx.conf tmux-theme.conf \
-            tmux.conf vim/bundle vimrc; do
+            ssh/config tmux-darwin.conf tmux-linux.conf \
+	    tmux-theme.conf tmux.conf vim/bundle vimrc; do
     ln -s ~/opt/env/"$dotfile" "$HOME/.$dotfile"
 done
 
