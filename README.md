@@ -59,8 +59,9 @@ nano ~/opt/env/bash.d/10defaults.sh
 for dotfile in bash.d bash_logout bashrc condarc editrc \
             gitattributes gitconfig gitignore_global \
             hgignore_global inputrc nanorc profile \
-            ssh/config tmux-darwin.conf tmux-linux.conf \
-	    tmux-theme.conf tmux.conf vim/bundle vimrc; do
+            Rprofile ssh/config tmux-darwin.conf \
+	    tmux-linux.conf tmux-theme.conf tmux.conf \
+	    vim/bundle vimrc; do
     ln -s ~/opt/env/"$dotfile" "$HOME/.$dotfile"
 done
 
@@ -78,7 +79,6 @@ git config --global core.editor "nano"
 * [R](https://cloud.r-project.org/bin/macosx/)
 * [clang and gfortran for R](https://cloud.r-project.org/bin/macosx/tools/)
 * [XQuartz](https://www.xquartz.org/)
-* [Microsoft Teams](https://teams.microsoft.com/downloads)
 * [Google Drive File Stream](https://dl.google.com/drive-file-stream/GoogleDriveFileStream.dmg)
 * [Java 8 (for neo4j)](https://www.oracle.com/technetwork/java/javase/downloads/index.html#JDK8)
 
@@ -95,6 +95,6 @@ brew install bash-completion brew-cask-completion colordiff \
 
 ```bash
 brew tap homebrew/cask
-brew cask install julia knime macvim rstudio \
-        sourcetree visual-studio-code zotero
+brew cask install julia knime macvim microsoft-teams \
+	rstudio sourcetree visual-studio-code zotero
 ```
