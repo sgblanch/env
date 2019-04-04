@@ -5,7 +5,7 @@
 prepend_dir() {
 	eval CUR="\${$1:-}"
 	if [[ -d "$2" ]] && [[ ! "${CUR:-}" =~ "(^|:)$2($|:)" ]]; then
-		eval $1="$2${CUR:+\:${CUR}}"
+		eval $1="\"$2${CUR:+:${CUR}}\""
 	fi
 }
 
@@ -14,6 +14,6 @@ prepend_dir() {
 append_dir() {
 	eval CUR="\${$1:-}"
 	if [[ -d "$2" ]] && [[ ! "${CUR:-}" =~ "(^|:)$2($|:)" ]]; then
-		eval $1="${CUR:+${CUR}\:}$2"
+		eval $1="\"${CUR:+${CUR}:}$2\""
 	fi
 }
