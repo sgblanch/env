@@ -9,7 +9,7 @@ if [[ ${count:-0} -le 1 ]] && klist -s; then
 fi
 
 # Remove all identities from SSH agend if user has no other sessions
-if [[ ${count:-0} -le 1 ]]; then
+if [[ ${count:-0} -le 1 ]] && command -v ssh-add 2>/dev/null; then
 	ssh-add -qD
 fi
 
