@@ -69,6 +69,7 @@ git config --global user.name "John Doe"
 git config --global user.email "jdoe@uncc.edu"
 git config --global core.excludesfile ~/.gitignore_global
 git config --global core.editor "nano"
+git config --global credential.helper osxkeychain
 ```
 
 ## Required & Recommended Packages
