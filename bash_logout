@@ -8,5 +8,10 @@ if [[ ${count:-0} -le 1 ]] && klist -s; then
 	kdestroy
 fi
 
+# Remove all identities from SSH agend if user has no other sessions
+if [[ ${count:-0} -le 1 ]]; then
+	ssh-add -qD
+fi
+
 # when leaving the console clear the screen to increase privacy
 [[ "$SHLVL" = 1 ]] && [[ -x /usr/bin/clear_console ]] && /usr/bin/clear_console -q
