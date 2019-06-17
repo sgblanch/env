@@ -17,6 +17,6 @@ done
 HOMEBREW_NO_ANALYTICS=1
 
 # Place macOS applications in ~/Applications when using brew cask
-HOMEBREW_CASK_OPTS="--appdir=${HOME}/Applications"
+HOMEBREW_CASK_OPTS="--appdir=${HOME}/Applications --no-quarantine"
 
 export HOMEBREW_NO_ANALYTICS HOMEBREW_CASK_OPTS
