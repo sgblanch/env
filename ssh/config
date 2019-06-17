@@ -7,15 +7,12 @@ ServerAliveCountMax 3
 AddKeysToAgent yes
 
 Host hpc.uncc.edu
-	# Enable session multiplexing.  Once connected, additional
-	# connections over SSH (including rsync!) won't require
-	# authentication.  Major bonus when two-factor auth is enabled
+	HostName hpc.uncc.edu
+	# Enable session multiplexing
 	ControlMaster auto
 	ControlPath ~/.ssh/mux/%C
 	ControlPersist 4h
-	# Forward SSH agent.  Allows you to use identities stored on
-	# this computer to access remote computers from the cluster.
-	# Hello GitHub!
+	# Forward local SSH agent to remote server
 	ForwardAgent yes
 
 # Example showing how to enable X forwarding as well as how to connect
