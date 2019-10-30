@@ -6,19 +6,19 @@ ServerAliveCountMax 3
 
 AddKeysToAgent yes
 
-Host hpc.uncc.edu
-	HostName hpc.uncc.edu
-	# Enable session multiplexing
-	ControlMaster auto
-	ControlPath ~/.ssh/mux/%C
-	ControlPersist 4h
-	# Forward local SSH agent to remote server
-	ForwardAgent yes
+# Voodoo to always connect to the same head node.  This is NOT
+# RECOMMENDED.  Only use if you understand exactly what this does, why
+# you want it, and that things will break horribly if a butterfly flaps
+# its wings in south america.
+#Match originalhost hpc.uncc.edu exec "grep -qE '\suncc\.edu\s' /etc/resolv.conf"
+#    HostName 10.16.115.244  # cph-i1
+#    #HostName 10.16.115.245  # cph-i2
 
-# Example showing how to enable X forwarding as well as how to connect
-# to an IP address by name
-#Host halcyon
-#	Compression yes
-#	ForwardX11 yes
-#	ForwardX11Trusted yes
-#	HostName 192.168.1.1
+Host hpc.uncc.edu
+    HostName hpc.uncc.edu  # make vscode happy
+#    HostName 152.15.136.200  # cph-i1
+#    #HostName 152.15.136.201  # cph-i2
+    ControlMaster auto
+    ControlPath ~/.ssh/mux/%C
+    ControlPersist 4h
+    ForwardAgent yes
