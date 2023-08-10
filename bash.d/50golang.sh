@@ -2,18 +2,16 @@
 
 # Find GOROOT, preferring homebrew's go installation over golang.org's
 # install pkg
-for dir in "$(brew --prefix)/opt/go/libexec" /usr/local/go; do
+for dir in "${HOMEBREW_PREFIX:-/usr/local}/opt/go/libexec" /usr/local/go; do
 	if [[ -d "${dir}" ]]; then
 		export GOROOT="${dir}"
-		#prepend_dir PATH "${GOROOT}"
-
 		break
 	fi
 done
 
 # Add commom-ish source directories to GOPATH
 if [[ -n "${GOROOT:-}" ]]; then
-	for dir in "${HOME}/go" "${HOME}/src/go"; do
+	for dir in "${HOME}/go" "${HOME}/src"; do
 		append_dir GOPATH "${dir}"
 		prepend_dir PATH "${dir}/bin"
 	done

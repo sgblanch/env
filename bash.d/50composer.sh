@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# macOS
-prepend_dir PATH "${HOME}/.composer/vendor/bin"
-
-# Linux
-prepend_dir PATH "${HOME}/.local/composer/vendor/bin"
+for dir in "${HOME}/.composer/vendor/bin" "${HOME}/.local/composer/vendor/bin"; do
+    prepend_dir PATH "${dir}"
+done
 
