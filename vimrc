@@ -19,6 +19,8 @@ if has("spell")
 	autocmd FileType text,markdown set spell
 endif
 
+set printoptions=number:y,left:5pc,paper:letter
+
 "" Case sensitivity when seaching
 set smartcase   " ignore case if term is all lowercase
 "set ignorecase " ignore case when searching
