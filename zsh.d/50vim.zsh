@@ -1,0 +1,1 @@
+../bash.d/50vim.sh

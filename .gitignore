@@ -5,3 +5,4 @@ bash.d/10defaults.sh
 ssh/authorized_keys
 ssh/id_*
 vim/.netrwhist
+zsh.d/10defaults.zsh
