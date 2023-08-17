@@ -6,19 +6,14 @@ ServerAliveCountMax 3
 
 AddKeysToAgent yes
 
-# Voodoo to always connect to the same head node.  This is NOT
-# RECOMMENDED.  Only use if you understand exactly what this does, why
-# you want it, and that things will break horribly if a butterfly flaps
-# its wings in south america.
-#Match originalhost hpc.uncc.edu exec "grep -qE '\suncc\.edu\s' /etc/resolv.conf"
-#    HostName 10.16.115.244  # cph-i1
-#    #HostName 10.16.115.245  # cph-i2
-
-Host hpc.uncc.edu
-    HostName hpc.uncc.edu  # make vscode happy
-#    HostName 152.15.136.200  # cph-i1
-#    #HostName 152.15.136.201  # cph-i2
+Host hpc.charlotte.edu hpc1 hpc2
     ControlMaster auto
     ControlPath ~/.ssh/mux/%C
     ControlPersist 4h
     ForwardAgent yes
+
+Host hpc1
+    HostName urc-str-i1.uncc.edu
+
+Host hpc2
+    HostName urc-str-i2.uncc.edu
