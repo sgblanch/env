@@ -1,0 +1,30 @@
+#!/bin/zsh
+
+# Basic prompt of user@host:/path%
+#
+# Same format as scp/rsync path and can be copied and used as such
+PROMPT='%n@%m:%~%# '
+
+# Default text editor.
+EDITOR="nano"
+VISUAL="nano"
+
+# Default pager to read text files
+PAGER="less"
+
+export EDITOR VISUAL PAGER
+
+# Explicitly set zsh to emacs mode.  Otherwise it will guess based on
+# value of $EDITOR
+command -v bindkey > /dev/null 2>&1 && bindkey -e
+
+# GitHub API token for homebrew.  Lifts API rate limits that can plague
+# frequent 'brew' usage.
+#
+# WARNING: when creating token, unselect *all* scopes
+# See:
+#      man brew
+#      https://github.com/settings/tokens
+#      https://developer.github.com/v3/#rate-limiting
+#export HOMEBREW_GITHUB_API_TOKEN=""
+
