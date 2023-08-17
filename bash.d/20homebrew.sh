@@ -14,7 +14,7 @@ HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_CASK_OPTS HOMEBREW_NO_ANALYTICS HOMEBREW_NO_EMOJI HOMEBREW_NO_ENV_HINTS
 
 # Search for homebrew
-for dir in ~/opt/brew /opt/brew ~/.linuxbrew /home/linuxbrew/.linuxbrew /usr/local; do
+for dir in ~/opt/brew /opt/homebrew ~/.linuxbrew /home/linuxbrew/.linuxbrew /usr/local; do
 	if [[ -x "${dir}/bin/brew" ]]; then
 		eval $("${dir}/bin/brew" shellenv)
 		break
