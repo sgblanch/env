@@ -14,16 +14,6 @@ User configuration files with an emphasis on macOS, although an incomplete effor
 xcode-select -p || xcode-select --install 
 ```
 
-### Legacy Headers (macOS 10.14/Mojave)
-
-Apple in their...infinite wisdom...has decided to not put header in `/usr/include` by default.  This can lead to unexpected results when compiling software.  We can install the 'legacy' header files into `/usr/include` to make our life easier.
-
-**NOTE** If you are on macOS 10.14 and `macOS_SDK_headers_for_macOS_10.14.pkg` is missing, try running `xcode-select --install` again.  Your Command Line Tools may be from a previous OS release.
-
-```bash
-sudo installer -pkg "$(xcode-select -p)/Packages/macOS_SDK_headers_for_macOS_10.14.pkg" -target /
-```
-
 ### Create `~/opt`
 
 ```bash
@@ -76,26 +66,22 @@ git config --global credential.helper osxkeychain
 
 ### Applications
 
-
-* [R](https://cloud.r-project.org/bin/macosx/)
-* [clang and gfortran for R](https://cloud.r-project.org/bin/macosx/tools/)
-* [XQuartz](https://www.xquartz.org/)
-* [Google Drive File Stream](https://dl.google.com/drive-file-stream/GoogleDriveFileStream.dmg)
-* [Java 8 (for neo4j)](https://www.oracle.com/technetwork/java/javase/downloads/index.html#JDK8)
+* [gfortran for R](https://cloud.r-project.org/bin/macosx/tools/)
 
 ### homebrew
 
 ```bash
-brew install bash-completion brew-cask-completion colordiff \
-        coreutils ctags gawk git-flow git-lfs go lesspipe \
-        mercurial nano neo4j pip-completion python python@2 \
-        reattach-to-user-namespace tmux xz
+brew install colordiff coreutils ctags docker-completion \
+        git-lfs go htop lesspipe nano \
+        python qrencode reattach-to-user-namespace tio tmux xz \
+        zsh-completions
 ```
 
 ### homebrew casks
 
 ```bash
-brew tap homebrew/cask
-brew cask install julia knime macvim microsoft-teams \
-	rstudio sourcetree visual-studio-code zotero
+brew install --cask balenaetcher bitwarden docker fontbase \
+        google-{chrome,drive} gimp inkscape macvim \
+        microsoft-{excel,onenote,powerpoint,word} quarto r rstudio slack \
+        visual-studio-code xquartz zoom
 ```
